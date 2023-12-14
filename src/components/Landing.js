@@ -21,7 +21,7 @@ function Landing() {
             <dotlottie-player
                 src="https://lottie.host/6aa6b210-d2a5-464a-af6d-9993a32d5c5e/Lj2PNSmYzn.json"
                 background="transparent"
-                speed="1"
+                speed=".75"
                 style={{
                     transform: 'scale(1)' // Apply the scale transform
                 }}
