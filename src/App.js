@@ -9,6 +9,7 @@ import Login from "./components/Login/Login";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Quiz from "./components/Quiz";
+import Courses from "./components/Courses";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
                 <Route path='/login' element={<Login />} />
                 <Route path='/signup' element={<SignUp />} />
                 <Route path='/quiz' element={<Quiz />} />
+                <Route path='/courses' element={<Courses />} />
               </Routes>
             </BrowserRouter>
           </ThemeProvider>
