@@ -195,7 +195,7 @@ const Quiz = () => {
         <div>
           <Flex mb={"25px"} justify={"space-between"} align={"start"}>
             <Box fontSize={"30px"} fontWeight={"bold"} mb={"2px"}>
-              <Heading fontSize={"35px"}>{questions[currentQuestion]}</Heading>
+              <Heading fontSize={"35px"}>What topics are you interested in?</Heading>
             </Box>
           </Flex>
           <div className="flex flex-row items-center flex-wrap mx-3">

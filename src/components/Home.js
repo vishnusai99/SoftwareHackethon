@@ -34,9 +34,7 @@ function Home() {
 
   return (
     <div className="container mt-4 d-flex flex-row flex-wrap justify-center items-center mx-auto gap-x-4 gap-y-6">
-      
-      {data && data?.map((item, i) => <Courses key={i} courseData={item} />)}
-          
+      {data && data?.map((item, i) => <Courses key={i} courseData={item} />)}          
     </div>
   );
 }

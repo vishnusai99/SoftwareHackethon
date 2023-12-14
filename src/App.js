@@ -11,6 +11,8 @@ import Home from "./components/Home";
 import Quiz from "./components/Quiz";
 import Courses from "./components/Courses";
 import Landing from "./components/Landing";
+import Personalized from "./components/Personalized";
+import Home1 from "./components/Home1";
 
 function App() {
 
@@ -36,6 +38,8 @@ function App() {
                 <Route path='/landing' element={<Landing />} />
                 <Route path='/courses' element={<Courses />} />
                 <Route path='/home' element={<Home />} />
+                <Route path='/home1' element={<Home1 />} />
+                <Route path='/personalized' element={<Personalized />} />
               </Routes>
             </BrowserRouter>
           </ThemeProvider>
