@@ -12,10 +12,11 @@ import {
 import { BiRadioCircleMarked } from "react-icons/bi";
 import { useElapsedTime } from 'use-elapsed-time'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 const Quiz = () => {
     const navigate = useNavigate()
     const [currentQuestion, setCurrentQuestion] = useState(0)
-    const [showScore, setShowScore] = useState(false)
+    const [showScore, setShowScore] = useState(true)
 
     const [goal, setGoal] = useState('');
     const [learingStyle, setLearingStyle] = useState('');
@@ -30,6 +31,15 @@ const Quiz = () => {
         'Select your preferred course duration', // duration
         'Which categories interest you the most?', // interests
     ]);
+    const [selectedTags, setSelectedTags] = useState([]);
+
+    const handleTagClick = (tag) => {
+        if (selectedTags.includes(tag)) {
+            setSelectedTags(selectedTags.filter((selectedTag) => selectedTag !== tag));
+        } else {
+            setSelectedTags([...selectedTags, tag]);
+        }
+    };
 
     const options = [
         [
@@ -54,10 +64,15 @@ const Quiz = () => {
         ],
         [
             'Programming',
-            'Web Development',
-            'Data Science',
-            'Design',
-            'Marketing',
+            'Film',
+            "Marketing",
+            "Cloud Computing",
+            "Cryptography",
+            'Cyber Security',
+            'Data Structures',
+            'Machine Learning',
+            'Deep Learning',
+            'Internet of Things'
         ],
     ];
     const answers = [
@@ -83,10 +98,15 @@ const Quiz = () => {
         ],
         [
             'Programming',
-            'Web Development',
-            'Data Science',
-            'Design',
-            'Marketing',
+            'film',
+            "Marketing",
+            "Cloud Computing cloud-computing",
+            "Cryptography",
+            'cyber-securty cyber security',
+            'Data Structures',
+            'Machine Learning machine-learning',
+            'Deep Learning',
+            'internet of things'
         ],
     ];
 
@@ -158,19 +178,20 @@ const Quiz = () => {
                                         setLoading(true)
                                         setTimeout(() => {
                                             setLoading(false)
-                                            if(currentQuestion===0) {
+                                            if (currentQuestion === 0) {
                                                 console.log(options[currentQuestion][index])
                                                 setGoal(options[currentQuestion][index])
                                             }
-                                            else if(currentQuestion===1) {
-                                                
+                                            else if (currentQuestion === 1) {
+
                                             }
 
-                                            if (currentQuestion < questions.length - 1) {
+                                            if (currentQuestion < questions.length - 2) {
                                                 setCurrentQuestion(currentQuestion + 1)
                                             } else {
                                                 setShowScore(true)
-                                                navigate('/quiz');
+
+
                                             }
                                             setKey(new Date().getTime())
                                         }, 1000)
@@ -185,6 +206,34 @@ const Quiz = () => {
                         })}
                     </Flex>
                 </Box>}
+
+            {showScore && <div>
+                {options[4].map((tag, index) => (
+                    <span
+                        key={tag}
+                        onClick={() => handleTagClick(answers[4][index])}
+                        style={{
+                            padding: '8px',
+                            margin: '4px',
+                            cursor: 'pointer',
+                            backgroundColor: selectedTags.includes(answers[4][index]) ? '#3498db' : '#ecf0f1',
+                            color: selectedTags.includes(answers[4][index]) ? '#ffffff' : '#2c3e50',
+                            borderRadius: '4px',
+                            display: 'inline-block',
+                        }}
+                    >
+                        {tag}
+                    </span>
+                ))}
+                <Button variant={'solid'} colorScheme='blue' onClick={() => {
+                    // console.log(postData())
+                    navigate('/home', { state: { keywords: selectedTags } })
+                }}>
+                    Next
+                </Button>
+            </div>}
+
+
         </Flex>
     )
 }

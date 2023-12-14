@@ -4,9 +4,9 @@ import pandas as pd
 from flask import Flask, jsonify, request
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app)
 courses_data = pd.read_csv('Coursera.csv')
 # Feature extraction using TF-IDF Vectorizer for course descriptions
 tfidf_vectorizer = TfidfVectorizer(stop_words='english')
