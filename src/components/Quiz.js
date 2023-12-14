@@ -8,8 +8,8 @@ import {
   Flex,
   Spacer,
   Spinner,
-    HStack,
-    Tag,
+  HStack,
+  Tag,
 } from "@chakra-ui/react";
 import { BiRadioCircleMarked } from "react-icons/bi";
 import { useElapsedTime } from "use-elapsed-time";
@@ -191,42 +191,53 @@ const Quiz = () => {
         </Box>
       )}
 
-            {showScore &&
-                <div>
-                    <Flex mb={'25px'} justify={'space-between'} align={'start'}>
-                        <Box fontSize={'30px'} fontWeight={'bold'} mb={'2px'}>
-                            <Heading fontSize={'35px'}>{questions[currentQuestion]}</Heading>
-                        </Box>
-                    </Flex>
-                    <div className='flex flex-row items-center flex-wrap mx-3'>
-                        {options[4].map((tag, index) => (
-                            <span className='rounded-full p-1 px-2'
-                                key={tag}
-                                onClick={() => handleTagClick(answers[4][index])}
-                                style={{
-                                    padding: '12px',
-                                    margin: '5px',
-                                    cursor: 'pointer',
-                                    backgroundColor: selectedTags.includes(answers[4][index]) ? '#3498db' : '#ecf0f1',
-                                    color: selectedTags.includes(answers[4][index]) ? '#ffffff' : '#2c3e50',
-                                    borderRadius: '4px',
-                                    display: 'inline-block',
-                                }}
-                            >
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-                    <Button className='my-3 flex flex-row self-end' variant={'solid'} colorScheme='blue' onClick={() => {
-                        navigate('/home', { state: { keywords: selectedTags } })
-                    }}>
-                        Next
-                    </Button>
-                </div>}
-
-
-        </Flex>
-    )
-}
+      {showScore && (
+        <div>
+          <Flex mb={"25px"} justify={"space-between"} align={"start"}>
+            <Box fontSize={"30px"} fontWeight={"bold"} mb={"2px"}>
+              <Heading fontSize={"35px"}>{questions[currentQuestion]}</Heading>
+            </Box>
+          </Flex>
+          <div className="flex flex-row items-center flex-wrap mx-3">
+            {options[2].map((tag, index) => (
+              <span
+                className="rounded-full p-1 px-2"
+                key={tag}
+                onClick={() => handleTagClick(answers[2][index])}
+                style={{
+                  padding: "12px",
+                  margin: "5px",
+                  cursor: "pointer",
+                  backgroundColor: selectedTags.includes(answers[2][index])
+                    ? "#3498db"
+                    : "#ecf0f1",
+                  color: selectedTags.includes(answers[2][index])
+                    ? "#ffffff"
+                    : "#2c3e50",
+                  borderRadius: "4px",
+                  display: "inline-block",
+                }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <Button
+            className="my-3 flex flex-row self-end"
+            variant={"solid"}
+            colorScheme="blue"
+            onClick={() => {
+              navigate("/home", {
+                state: { keywords: selectedTags, skillLevel: goal, duration },
+              });
+            }}
+          >
+            Next
+          </Button>
+        </div>
+      )}
+    </Flex>
+  );
+};
 
 export default Quiz;
