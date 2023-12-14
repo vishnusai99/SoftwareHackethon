@@ -7,6 +7,8 @@ import { Helmet } from "react-helmet";
 import SignUp from "./components/SignUp/SignUp";
 import Login from "./components/Login/Login";
 import Header from "./components/Header";
+import Home from "./components/Home";
+import Quiz from "./components/Quiz";
 
 function App() {
 
@@ -23,8 +25,10 @@ function App() {
             <BrowserRouter>
               <Header />
               <Routes>
+                <Route path='/' element={<Home />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/signup' element={<SignUp />} />
+                <Route path='/quiz' element={<Quiz />} />
               </Routes>
             </BrowserRouter>
           </ThemeProvider>
