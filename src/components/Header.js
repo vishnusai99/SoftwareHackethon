@@ -31,7 +31,7 @@ export default function Header() {
   return (
     <Box className='bg=[#589F3C]'>
       <Flex className='py-0.5'
-        bg={useColorModeValue('#589F3C')}
+        bg={useColorModeValue('#12343b')}
         color={useColorModeValue('gray.600', 'white')}
         minH={'63px'}
         py={{ base: 2 }}
@@ -59,7 +59,7 @@ export default function Header() {
             {/* {logo here} */}
 
             <h1 className='text-3xl text-white font-semibold ml-3'>
-              Course Recommendor 
+              Course Compass
             </h1>
           </div>
 
