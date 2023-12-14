@@ -10,6 +10,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Quiz from "./components/Quiz";
 import Courses from "./components/Courses";
+import Landing from "./components/Landing";
 
 function App() {
 
@@ -26,10 +27,11 @@ function App() {
             <BrowserRouter>
               <Header />
               <Routes>
-                <Route path='/' element={<Home />} />
+                <Route path='/' element={<Landing />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/signup' element={<SignUp />} />
                 <Route path='/quiz' element={<Quiz />} />
+                <Route path='/landing' element={<Landing />} />
                 <Route path='/courses' element={<Courses />} />
               </Routes>
             </BrowserRouter>
