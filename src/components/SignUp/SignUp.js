@@ -159,7 +159,7 @@ const SignUp = () => {
         </div>
 
         <div className="welcome-box">
-          <h2 className="text-2xl font-bold mb-4 text-[#f8f9fa]">Welcome to the Course Recommendor App</h2>
+          <h2 className="text-2xl font-bold mb-4 text-[#f8f9fa]">Welcome to the Course Compass</h2>
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3HDlNcfJfJcj9ssOzOc-o3JJg4mRNGUKyzvtQq7GHXNi88TOaR0eMd5bD-X0aX9in_zM&usqp=CAU"
             alt=""

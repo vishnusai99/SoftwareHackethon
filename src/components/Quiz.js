@@ -72,7 +72,8 @@ const Quiz = () => {
             'Data Structures',
             'Machine Learning',
             'Deep Learning',
-            'Internet of Things'
+            'Internet of Things',
+            'Excel',
         ],
     ];
     const answers = [
@@ -106,7 +107,8 @@ const Quiz = () => {
             'Data Structures',
             'Machine Learning machine-learning',
             'Deep Learning',
-            'internet of things'
+            'internet of things',
+            'excel',
         ],
     ];
 

@@ -18,7 +18,7 @@ function App() {
     <div>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Course Recommendor</title>
+        <title>Course Compass</title>
         <link rel="canonical" href="http://localhost:3004 " />
       </Helmet>
       <ChakraProvider theme={theme}>
@@ -33,6 +33,7 @@ function App() {
                 <Route path='/quiz' element={<Quiz />} />
                 <Route path='/landing' element={<Landing />} />
                 <Route path='/courses' element={<Courses />} />
+                <Route path='/home' element={<Home />} />
               </Routes>
             </BrowserRouter>
           </ThemeProvider>
