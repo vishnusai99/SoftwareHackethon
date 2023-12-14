@@ -159,9 +159,9 @@ const SignUp = () => {
         </div>
 
         <div className="welcome-box">
-          <h2 className="text-2xl font-bold mb-4 text-[#f8f9fa]">Welcome to the Health App</h2>
+          <h2 className="text-2xl font-bold mb-4 text-[#f8f9fa]">Welcome to the Course Recommendor App</h2>
           <img
-            src="https://img.freepik.com/free-vector/healthy-lifestyle-diet-fitness-vector-sign-shape-heart-with-multiple-icons-depicting-various-sports-vegetables-cereals-seafood-meat-fruit-sleep-weight-beverages_1284-44073.jpg?w=1380&t=st=1701497993~exp=1701498593~hmac=1e9bc1c9790b2534ac1f29837fe443a6cdc2f060823b6206ddef79566139eb2a"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3HDlNcfJfJcj9ssOzOc-o3JJg4mRNGUKyzvtQq7GHXNi88TOaR0eMd5bD-X0aX9in_zM&usqp=CAU"
             alt=""
             className="rounded mt-20"
           />

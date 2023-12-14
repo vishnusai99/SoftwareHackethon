@@ -32,7 +32,7 @@ const mclient=require('mongodb').MongoClient;
 mclient.connect('mongodb://127.0.0.1:27017')
 .then((dbRef)=>{
   //connect to a database
-  const dbobj=dbRef.db('healthtracking')
+  const dbobj=dbRef.db('courses')
   //connect to collections of this database
   const userCollectionObj=dbobj.collection('users')
   //share collections to APIsi
