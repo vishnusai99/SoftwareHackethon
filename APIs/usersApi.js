@@ -68,7 +68,7 @@ userApp.post("/register",
           //verify username
           let userOfDB=await userCollectionObj.findOne({username:userCredObj.username})
           
-          //if username if invalid
+          //if username is invalid
           if(userOfDB===null){
             response.status(200).send({message:"Invalid username"})
           }
