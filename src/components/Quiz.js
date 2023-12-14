@@ -16,13 +16,19 @@ const Quiz = () => {
     const navigate = useNavigate()
     const [currentQuestion, setCurrentQuestion] = useState(0)
     const [showScore, setShowScore] = useState(false)
-    const [score, setScore] = useState(0)
+
+    const [goal, setGoal] = useState('');
+    const [learingStyle, setLearingStyle] = useState('');
+    const [level, setLevel] = useState('');
+    const [duration, setDuration] = useState([]);
+    const [interests, setInterests] = useState([])
+
     const [questions, setQuestions] = useState([
-        'What is your primary goal for learning on this platform?',
-        'Which learning style suits you best?',
-        'What is your preferred skill level for courses?',
-        'Select your preferred course duration',
-        'Which categories interest you the most?',
+        'What is your primary goal for learning on this platform?', //Goal
+        'Which learning style suits you best?', // Learning Style
+        'What is your preferred skill level for courses?', // Level
+        'Select your preferred course duration', // duration
+        'Which categories interest you the most?', // interests
     ]);
 
     const options = [
@@ -54,14 +60,36 @@ const Quiz = () => {
             'Marketing',
         ],
     ];
+    const answers = [
+        [
+            'Skill enhancement for current job',
+            'Career change',
+            'Personal enrichment and hobbies'
+        ],
+        [
+            'Visual',
+            'Auditory',
+            'Mix Of Both'
+        ],
+        [
+            'Beginner',
+            'Intermediate',
+            'Advanced'
+        ],
+        [
+            'Short and focused (1-2 weeks)',
+            'Moderate (4-6 weeks)',
+            'Extended (8+ weeks)'
+        ],
+        [
+            'Programming',
+            'Web Development',
+            'Data Science',
+            'Design',
+            'Marketing',
+        ],
+    ];
 
-    const values = [
-        [1, 2, 5, 3],
-        [1, 5, 2, 3],
-        [1, 2, 5, 1],
-        [2, 1, 5, 3],
-        [1, 2, 5, 2]
-    ]
     const [loading, setLoading] = useState(false)
     const [key, setKey] = useState("0");
 
@@ -91,8 +119,7 @@ const Quiz = () => {
                 setCurrentQuestion(currentQuestion + 1)
             } else {
                 setShowScore(true)
-                localStorage.setItem('score', score);
-                navigate('/profile');
+                navigate('/quiz');
             }
             setKey(new Date().getTime())
         }, 1000)
@@ -130,14 +157,20 @@ const Quiz = () => {
                                     onClick={() => {
                                         setLoading(true)
                                         setTimeout(() => {
-                                            setScore(score + values[currentQuestion][index])
                                             setLoading(false)
+                                            if(currentQuestion===0) {
+                                                console.log(options[currentQuestion][index])
+                                                setGoal(options[currentQuestion][index])
+                                            }
+                                            else if(currentQuestion===1) {
+                                                
+                                            }
+
                                             if (currentQuestion < questions.length - 1) {
                                                 setCurrentQuestion(currentQuestion + 1)
                                             } else {
                                                 setShowScore(true)
-                                                localStorage.setItem('score', score);
-                                                navigate('/profile');
+                                                navigate('/quiz');
                                             }
                                             setKey(new Date().getTime())
                                         }, 1000)
