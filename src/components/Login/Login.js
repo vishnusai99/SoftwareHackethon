@@ -44,7 +44,7 @@ function Login() {
         <div className="left w-1/2 p-10 bg-[#589f3c80]">
           <h1 className='text-5xl font-bold text-white'>
             <div className="tracking-wider">
-              Welcome to Course Recommendor
+              Welcome to Course Compass
             </div>
           </h1>
         </div>
