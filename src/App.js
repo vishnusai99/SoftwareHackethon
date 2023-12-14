@@ -26,11 +26,11 @@ function App() {
             <BrowserRouter>
               <Header />
               <Routes>
-                <Route path='/' element={<Home />} />
+                <Route path='/' element={<Landing />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/signup' element={<SignUp />} />
                 <Route path='/quiz' element={<Quiz />} />
-                <Route path='/landing' element={<Landing/>} />
+                <Route path='/landing' element={<Landing />} />
               </Routes>
             </BrowserRouter>
           </ThemeProvider>
