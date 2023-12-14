@@ -34,18 +34,9 @@ function Home() {
 
   return (
     <div className="container mt-4 d-flex flex-row flex-wrap justify-center items-center mx-auto gap-x-4 gap-y-6">
-      <div>
-        <h2>Filters</h2>
-      </div>
+      
       {data && data?.map((item, i) => <Courses key={i} courseData={item} />)}
-            <dotlottie-player
-        src="https://lottie.host/d4d0332b-81e8-4795-ae55-99798f6cc56c/lkvQtwuLst.json"
-        background="transparent"
-        speed="1"
-        style={{ width: '300px', height: '300px' }}
-        loop
-        autoplay
-      ></dotlottie-player>
+          
     </div>
   );
 }
